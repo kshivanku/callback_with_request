@@ -4,10 +4,12 @@ var data = null;
 getData();
 
 function getData(){
+  var localVariable = "something important"; //just checking to see if this variable is accessible inside the callback function
   requestData(function(err, resp){
     data = resp;
     console.log("inside callback function");
     console.log(data);
+    console.log('localVariable', localVariable);
   });
   console.log("this gets executed anyway");
 }
@@ -30,7 +32,7 @@ function requestData(callback){
   }
   request({
     headers: {
-      'authorization': 'Bearer A23AAEyVzKAkM3OJ1USo5knmWeQEyChwZo5AEZ448AXwKZl4PuP_CmQL8VCrZfk67Z_NbtM80L5qpSKZ-FYVqFOiQ9r8I8jCA',
+      'authorization': 'Bearer A23AAG53i1fiRd2kS5kSwaQanYV7pxdnuPMaFa4wsPZLZgvZQycXnOBZDyxu4vEDTOZJhZs5TG0wSamO_gxFeTcRDnfiL-NsA',
       'accept': 'application/json',
       'accept_language': 'en_US',
       'content_type': 'application/json'
